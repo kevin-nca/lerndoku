@@ -8,7 +8,7 @@ sidebar_position: 1
 Willkommen zur Lerndokumentation! In diesem Abschnitt erfährst du, wie du deine Dokumente in Docusaurus mithilfe von
 `_category_.json`-Dateien und der `sidebar_position` im Frontmatter strukturieren kannst. Weitere Details zu den
 verschiedenen Optionen findest du in der offiziellen Dokumentation
-unter in der [Docusaurus-Dokumentation](https://docusaurus.io/docs/)
+in der [Docusaurus-Dokumentation](https://docusaurus.io/docs/)
 
 ---
 
