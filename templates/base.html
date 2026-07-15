@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    >
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <meta name="description" content="{{ config.description }}">
+    <link rel="icon" href="{{ get_url(path="favicon.svg") }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
+    <link rel="stylesheet" href="{{ config.base_url | safe }}/pagefind/pagefind-ui.css">
+    <script src="{{ config.base_url | safe }}/pagefind/pagefind-ui.js" defer></script>
+    <script src="{{ get_url(path="search.js", cachebust=true) }}" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <a class="brand" href="{{ config.base_url | safe }}/">{{ config.title }}</a>
+        <a href="{{ get_url(path="@/dokus/_index.md") }}">Dokus</a>
+      </nav>
+      <div id="search"></div>
+    </header>
+    <main>
+      {% block content %}{% endblock content %}
+    </main>
+    <footer class="site-footer">
+      <p>Lerndokumentation Informatiker/in EFZ</p>
+    </footer>
+  </body>
+</html>

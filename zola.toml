@@ -1,0 +1,17 @@
+# In CI the base_url is derived from the repository name (pages.yml passes
+# --base-url); the bootstrap workflow rewrites this URL for repositories
+# created from the template.
+base_url = "https://kevin-nca.github.io/lerndoku"
+title = "Lerndokumentation"
+description = "Lerndokumentation Informatiker/in EFZ"
+default_language = "de"
+compile_sass = false
+build_search_index = false
+
+[markdown.highlighting]
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[extra]
+# First month in which a Lerndoku entry is expected (YYYY-MM).
+lerndoku_start = "2025-08"

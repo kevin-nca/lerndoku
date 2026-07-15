@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} – {{ config.title }}{% endblock title %}
+
+{% block content %}
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">
+      <time datetime="{{ page.date }}">{{ page.date | date(format="%d.%m.%Y") }}</time>
+    </p>
+    {{ page.content | safe }}
+  </article>
+  <p><a href="{{ get_url(path="@/dokus/_index.md") }}">← Alle Dokus</a></p>
+{% endblock content %}

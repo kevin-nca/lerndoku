@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <article>
+    {{ section.content | safe }}
+  </article>
+
+  {% set dokus = get_section(path="dokus/_index.md") %}
+  {% if dokus.pages %}
+    <section class="latest">
+      <h2>Neueste Einträge</h2>
+      <ul class="doku-list">
+        {% for page in dokus.pages | slice(end=3) %}
+          <li>
+            <time datetime="{{ page.date }}">{{ page.date | date(format="%d.%m.%Y") }}</time>
+            <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+{% endblock content %}
