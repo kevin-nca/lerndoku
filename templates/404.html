@@ -3,6 +3,10 @@
 {% block title %}Seite nicht gefunden – {{ config.title }}{% endblock title %}
 
 {% block content %}
-  <h1>Seite nicht gefunden</h1>
-  <p>Diese Seite existiert nicht. <a href="{{ config.base_url | safe }}/">Zur Startseite</a></p>
+  <div class="prose">
+    <div class="prose-body">
+      <h1>Seite nicht gefunden</h1>
+      <p>Diese Seite existiert nicht. <a href="{{ config.base_url | safe }}/">Zur Startseite</a></p>
+    </div>
+  </div>
 {% endblock content %}
