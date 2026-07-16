@@ -2,12 +2,20 @@
 
 {% block title %}{{ section.title }} – {{ config.title }}{% endblock title %}
 
+{% block head %}
+  <link rel="stylesheet" href="{{ config.base_url | safe }}/pagefind/pagefind-ui.css">
+  <script src="{{ config.base_url | safe }}/pagefind/pagefind-ui.js" defer></script>
+  <script src="{{ get_url(path="search.js", cachebust=true) }}" defer></script>
+{% endblock head %}
+
 {% block content %}
   <div class="listing-page">
     <header class="page-header">
       <h1>{{ section.title }}</h1>
       <div class="page-subtitle">{{ section.content | safe }}</div>
     </header>
+
+    <div id="search"></div>
 
     {% set_global current_year = "" %}
     {% for page in paginator.pages %}

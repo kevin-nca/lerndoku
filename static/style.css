@@ -264,10 +264,8 @@
   }
 
   #search {
-    margin-inline-start: auto;
-    flex: 0 1 15rem;
-    font-size: 0.875rem;
-    --pagefind-ui-scale: 0.8;
+    margin-block-end: var(--space-l);
+    --pagefind-ui-scale: 0.9;
     --pagefind-ui-primary: var(--accent);
     --pagefind-ui-text: var(--fg);
     --pagefind-ui-background: var(--bg);

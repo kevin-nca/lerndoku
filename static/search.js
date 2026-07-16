@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   if (typeof PagefindUI === "undefined") return;
+  if (!document.querySelector("#search")) return;
   new PagefindUI({
     element: "#search",
     showSubResults: true,
