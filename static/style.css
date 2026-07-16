@@ -248,6 +248,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: var(--space-m);
+    margin-inline-start: auto;
     font-family: var(--font-mono);
     font-size: 0.8125rem;
   }
@@ -274,6 +275,28 @@
     --pagefind-ui-border-width: 1px;
     --pagefind-ui-border-radius: 6px;
     --pagefind-ui-font: var(--font-sans);
+  }
+
+  #search .pagefind-ui__search-input {
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    font-weight: 400;
+    transition: border-color 150ms;
+  }
+
+  #search .pagefind-ui__search-input::placeholder {
+    color: var(--quiet);
+    opacity: 1;
+  }
+
+  #search .pagefind-ui__search-input:hover {
+    border-color: color-mix(in oklch, var(--fg) 30%, transparent);
+  }
+
+  #search .pagefind-ui__search-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-color: var(--accent);
   }
 
   /* Page + listing headers */

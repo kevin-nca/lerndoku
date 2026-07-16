@@ -22,7 +22,7 @@ serve:
 
 check: build check-images
 	test -f $(DIST)/index.html
-	test -f $(DIST)/dokus/index.html
+	test -f $(DIST)/regeln/index.html
 	test -f $(DIST)/badge.json
 	test -d $(DIST)/pagefind
 	@echo "check ok"

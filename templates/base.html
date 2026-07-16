@@ -28,7 +28,7 @@
       <nav aria-label="Hauptnavigation">
         <a class="brand" href="{{ config.base_url | safe }}/">{{ config.title }}</a>
         <div class="nav-links">
-          <a href="{{ get_url(path="@/dokus/_index.md") }}"{% if current_path is defined and current_path is starting_with("/dokus") %} aria-current="page"{% endif %}>Dokus</a>
+          <a href="{{ get_url(path="@/regeln/_index.md") }}"{% if current_path is defined and current_path is starting_with("/regeln") %} aria-current="page"{% endif %}>Regeln</a>
         </div>
       </nav>
     </header>
