@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#fdfcf9" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#16161d" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f8f7f3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1217" media="(prefers-color-scheme: dark)">
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
     {% block head %}{% endblock head %}
   </head>
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main">Zum Inhalt</a>
     <div class="progress" aria-hidden="true"></div>
     <header class="site-header">
@@ -35,22 +35,17 @@
     <main id="main">
       {% block content %}{% endblock content %}
     </main>
-    {% set release = get_env(name="RELEASE", default="") %}
-    {% set build_date = get_env(name="BUILD_DATE", default="") %}
-    {% set repo = get_env(name="GITHUB_REPOSITORY", default="") %}
+    {% set release = get_env(name="RELEASE", default="dev") %}
     <footer class="site-footer">
       <p>
-        <span>© {{ now() | date(format="%Y") }} {{ config.title }}</span>
-        {% if build_date %}<span>· Stand {{ build_date }}</span>{% endif %}
-        {% if release %}
-          <span>·
-            {% if repo %}
-              <a href="https://github.com/{{ repo | safe }}/commit/{{ release }}">{{ release }}</a>
-            {% else %}
-              {{ release }}
-            {% endif %}
-          </span>
-        {% endif %}
+        <span><a href="#top">↑ Nach oben</a></span>
+        <span>
+          {% if release != "dev" %}
+            <a href="{{ config.extra.repository | safe }}/commit/{{ release }}">{{ release }}</a>
+          {% else %}
+            {{ release }}
+          {% endif %}
+        </span>
       </p>
     </footer>
   </body>

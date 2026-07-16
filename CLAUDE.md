@@ -35,7 +35,8 @@ Use the Makefile for every task:
 
 - Keep the site minimal. No tracking, analytics, third-party embeds, or
   external runtime dependencies.
-- Keep JavaScript limited to the static search (`static/search.js`).
+- Keep JavaScript limited to small progressive enhancements
+  (`static/search.js`, `static/copy.js`); everything must work without JS.
 - Do not commit `dist/`, `public/`, or `static/processed_images/`.
 - Do not remove untracked files unless explicitly instructed.
 - Formatting is enforced by the pre-commit hook and CI; run `make fmt`

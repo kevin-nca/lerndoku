@@ -16,3 +16,4 @@ dark_theme = "github-dark"
 [extra]
 # First month in which a Lerndoku entry is expected (YYYY-MM).
 lerndoku_start = "2025-08"
+repository = "https://github.com/kevin-nca/lerndoku"

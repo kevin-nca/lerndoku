@@ -63,6 +63,10 @@ description = "Erste Schritte mit Containern."
 Then, as in any software project: `git add`, `git commit`, `git push` —
 directly to `main`. CI builds and publishes the site automatically.
 
+The entry list shows the beginning of each entry as its summary. To control
+the cut-off point, place `<!-- more -->` on its own line after the paragraph
+that should serve as the summary.
+
 ## Images
 
 Put screenshots into the entry folder and embed them like this:
@@ -75,6 +79,17 @@ At build time the shortcode converts the image to **WebP**, caps the width at
 1200 px, and loads it **lazily** — the site stays fast even with many
 screenshots. CI rejects source files over **2 MB**; shrink such images first
 (a cropped screenshot usually beats a full-screen one).
+
+## Code blocks
+
+Fenced code blocks are syntax-highlighted; name the language after the
+backticks. Append `,linenos` to show line numbers:
+
+````text
+```python,linenos
+print("Hallo")
+```
+````
 
 ## The progress badge
 

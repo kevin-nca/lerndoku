@@ -1,6 +1,7 @@
 /dist
 /public
 /static/processed_images
+/static/pagefind
 .DS_Store
 .idea
 .claude-notes

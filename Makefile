@@ -14,10 +14,16 @@ MAX_IMG_KB = 2048
 build:
 	rm -rf $(DIST)
 	$(ZOLA) build --output-dir $(DIST) $(BASE_URL_FLAG)
+	rm -rf $(DIST)/pagefind
 	$(MISE) exec -- pagefind --site $(DIST) --glob "dokus/*/index.html"
 	$(PY) scripts/badge.py --out $(DIST)/badge.json
 
-serve:
+# zola serve does not run Pagefind, so build the index once into static/
+# (gitignored) where the dev server picks it up. It reflects the state at
+# `make serve` time; rerun to refresh it.
+serve: build
+	rm -rf static/pagefind
+	cp -R $(DIST)/pagefind static/pagefind
 	$(ZOLA) serve
 
 check: build check-images
@@ -56,4 +62,4 @@ setup:
 	sh scripts/setup.sh
 
 clean:
-	rm -rf $(DIST) public static/processed_images
+	rm -rf $(DIST) public static/processed_images static/pagefind

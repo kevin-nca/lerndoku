@@ -40,8 +40,6 @@ jobs:
           owner="${GITHUB_REPOSITORY_OWNER,,}"
           repo="${GITHUB_REPOSITORY#*/}"
           export RELEASE="${GITHUB_SHA:0:7}"
-          BUILD_DATE="$(date -u +%Y-%m-%d)"
-          export BUILD_DATE
           make build BASE_URL="https://${owner}.github.io/${repo}"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

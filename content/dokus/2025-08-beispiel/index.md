@@ -4,11 +4,11 @@ date = 2025-08-15
 description = "Was ich diesen Monat über HTTP gelernt habe."
 +++
 
-## Ausgangslage
-
 Diesen Monat habe ich an einem internen Tool gearbeitet und dabei die
 Grundlagen von HTTP vertieft: Request-Methoden, Statuscodes und wie ich
 Requests im Browser analysiere.
+
+<!-- more -->
 
 ## Vorgehen
 
@@ -21,6 +21,23 @@ Ein Beispiel-Request mit `curl`:
 
 ```sh
 curl -i https://example.com/api/status
+```
+
+Dasselbe in JavaScript mit `fetch`:
+
+```js,linenos
+const response = await fetch("https://example.com/api/status");
+console.log(response.status, response.headers.get("content-type"));
+const data = await response.json();
+```
+
+Und in Python:
+
+```python,linenos
+import urllib.request
+
+with urllib.request.urlopen("https://example.com/api/status") as response:
+    print(response.status, response.headers["content-type"])
 ```
 
 ## Reflexion
