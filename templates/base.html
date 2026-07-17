@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ get_url(path="style.css", cachebust=true) }}">
     {% block head %}{% endblock head %}
   </head>
-  <body id="top">
+  <body>
     <a class="skip-link" href="#main">Zum Inhalt</a>
     <div class="progress" aria-hidden="true"></div>
     <header class="site-header">
@@ -37,8 +37,10 @@
     </main>
     {% set release = get_env(name="RELEASE", default="dev") %}
     <footer class="site-footer">
+      {% set root_section = get_section(path="_index.md") %}
+      {% set entry_count = root_section.pages | length %}
       <p>
-        <span><a href="#top">↑ Nach oben</a></span>
+        <span>{{ entry_count }} {% if entry_count == 1 %}Eintrag{% else %}Einträge{% endif %}</span>
         <span>
           {% if release != "dev" %}
             <a href="{{ config.extra.repository | safe }}/commit/{{ release }}">{{ release }}</a>

@@ -64,13 +64,8 @@
       time.dateTime = meta.date;
       time.textContent = formatDate(meta.date);
       metaLine.appendChild(time);
+      card.appendChild(metaLine);
     }
-    if (meta.reading_time) {
-      metaLine.appendChild(
-        document.createTextNode((meta.date ? " · " : "") + meta.reading_time),
-      );
-    }
-    if (metaLine.childNodes.length) card.appendChild(metaLine);
     const title = document.createElement("span");
     title.className = "doku-title";
     title.textContent = meta.title || "";

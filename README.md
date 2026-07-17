@@ -48,6 +48,9 @@ The easiest way is to copy the sample folder
 title = "Docker Basics"
 date = 2025-09-12
 description = "Erste Schritte mit Containern."
+
+[extra]
+tags = ["Docker", "DevOps"]   # optional
 +++
 
 ## Ausgangslage
